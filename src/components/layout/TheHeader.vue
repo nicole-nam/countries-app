@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <h1 class="padding">Where in the world?</h1>
-    <div class="padding">
+    <div class="padding mode">
       <i class="far fa-moon"></i>
       <p>Dark Mode</p>
     </div>
@@ -26,5 +26,10 @@ export default {};
 
 .padding {
   padding: 50px;
+}
+
+.mode {
+  display: flex;
+  gap: 10px;
 }
 </style>
