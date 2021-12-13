@@ -20,4 +20,12 @@ export default {
   margin: 0;
   padding: 0;
 }
+
+.dark {
+  background-color: hsl(209, 23%, 22%);
+}
+
+.light {
+  background-color: #fff;
+}
 </style>

@@ -1,15 +1,32 @@
 <template>
   <div class="header">
     <h1 class="padding">Where in the world?</h1>
-    <div class="padding mode">
-      <i class="far fa-moon"></i>
-      <p>Dark Mode</p>
+    <div class="padding" @click="toggle">
+      <div class="mode" v-if="dark">
+        <i class="far fa-sun"></i>
+        <p>Light Mode</p>
+      </div>
+      <div class="mode" v-else>
+        <i class="far fa-moon"></i>
+        <p>Dark Mode</p>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      dark: false,
+    };
+  },
+  methods: {
+    toggle() {
+      this.dark = !this.dark;
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -31,5 +48,6 @@ export default {};
 .mode {
   display: flex;
   gap: 10px;
+  cursor: pointer;
 }
 </style>
