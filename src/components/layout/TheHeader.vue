@@ -1,7 +1,7 @@
 <template>
-  <div class="header">
+  <div class="header" :class="{ dark: dark }">
     <h1 class="padding">Where in the world?</h1>
-    <div class="padding" @click="toggle">
+    <div class="padding" @click="toggle()">
       <div class="mode" v-if="dark">
         <i class="far fa-sun"></i>
         <p>Light Mode</p>
@@ -49,5 +49,10 @@ export default {
   display: flex;
   gap: 10px;
   cursor: pointer;
+}
+
+.dark {
+  background-color: hsl(209, 23%, 22%);
+  color: #fff;
 }
 </style>
