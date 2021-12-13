@@ -1,6 +1,6 @@
 <template>
   <the-header></the-header>
-  <router-view></router-view>
+  <router-view :class="{ dark: $store.state.dark }"></router-view>
 </template>
 
 <script>
@@ -24,6 +24,8 @@ export default {
 
 .dark {
   background-color: hsl(209, 23%, 22%);
+  height: 100vh;
+  color: #fff;
 }
 
 .light {

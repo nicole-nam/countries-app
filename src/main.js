@@ -1,6 +1,15 @@
 import { createApp } from "vue";
+import { createStore } from "vuex";
 import router from "./router.js";
 import App from "./App.vue";
+
+const store = createStore({
+  state() {
+    return {
+      dark: false,
+    };
+  },
+});
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
@@ -16,7 +25,7 @@ dom.watch();
 const app = createApp(App);
 
 app.use(router);
+app.use(store);
 
 app.component("font-awesome-icon", FontAwesomeIcon);
-
 app.mount("#app");
