@@ -1,6 +1,6 @@
 <template>
   <select v-model="selected">
-    <option :value="null">Filter by Region</option>
+    <option :value="null">&nbsp; &nbsp; Filter by Region</option>
     <option v-for="option in options" :value="option.value" :key="option">
       {{ option.text }}
     </option>
@@ -30,6 +30,6 @@ select {
   background-color: #f5f5f5;
   border-radius: 5px;
   width: 15%;
-  color: rgb(122, 122, 122);
+  color: rgb(110, 110, 110);
 }
 </style>
