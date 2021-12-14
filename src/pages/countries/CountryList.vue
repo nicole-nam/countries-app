@@ -1,4 +1,11 @@
 <template>
-  <h1>List here</h1>
-  <country-search></country-search>
+  <div class="container">
+    <country-search></country-search>
+  </div>
 </template>
+
+<style scoped>
+.container {
+  padding: 50px 70px;
+}
+</style>
