@@ -24,7 +24,6 @@ export default {
 
 .dark {
   background-color: hsl(209, 23%, 22%);
-  height: 100vh;
   color: #fff;
 }
 
