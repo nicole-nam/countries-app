@@ -1,5 +1,6 @@
 import { createApp } from "vue";
 import { createStore } from "vuex";
+import vSelect from "vue-select";
 import router from "./router.js";
 import App from "./App.vue";
 
@@ -31,6 +32,7 @@ app.use(router);
 app.use(store);
 
 app.component("font-awesome-icon", FontAwesomeIcon);
+app.component("v-select", vSelect);
 app.component("country-search", CountrySearch);
 app.component("country-dropdown", CountryDropdown);
 
