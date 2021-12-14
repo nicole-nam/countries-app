@@ -11,6 +11,7 @@ const store = createStore({
   },
 });
 
+import CountrySearch from "./components/ui/CountrySearch.vue";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { fas } from "@fortawesome/free-solid-svg-icons";
@@ -28,4 +29,5 @@ app.use(router);
 app.use(store);
 
 app.component("font-awesome-icon", FontAwesomeIcon);
+app.component("country-search", CountrySearch);
 app.mount("#app");

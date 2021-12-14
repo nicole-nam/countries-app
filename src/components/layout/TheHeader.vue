@@ -1,6 +1,5 @@
 <template>
   <div class="header" :class="{ dark: $store.state.dark }">
-    {{ $store.state.dark }}
     <h1 class="padding">Where in the world?</h1>
     <div class="padding" @click="toggle()">
       <div class="mode" v-if="$store.state.dark">
@@ -49,7 +48,6 @@ export default {
 
 .dark {
   background-color: hsl(209, 23%, 22%);
-  box-shadow: 0 0.3px 10px 0.1px rgb(209, 209, 209);
   color: #fff;
 }
 </style>
