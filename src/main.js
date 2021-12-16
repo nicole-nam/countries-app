@@ -14,6 +14,7 @@ const store = createStore({
 
 import CountrySearch from "./components/ui/CountrySearch.vue";
 import CountryDropdown from "./components/ui/CountryDropdown.vue";
+import CountryCard from "./components/ui/CountryCard.vue";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
@@ -35,5 +36,6 @@ app.component("font-awesome-icon", FontAwesomeIcon);
 app.component("v-select", vSelect);
 app.component("country-search", CountrySearch);
 app.component("country-dropdown", CountryDropdown);
+app.component("country-card", CountryCard);
 
 app.mount("#app");
