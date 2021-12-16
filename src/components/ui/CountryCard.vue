@@ -1,5 +1,14 @@
 <template>
-  <h1>country card</h1>
+  <div v-for="(country, index) in list" :key="index">
+    <div class="card">
+      <img :src="country.flags.svg" alt="Avatar" style="width: 100%" />
+      <div class="container">
+        <h4>
+          <b> {{ country.name.common }}</b>
+        </h4>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -18,3 +27,15 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 40%;
+}
+
+.container {
+  padding: 2px 16px;
+}
+</style>
