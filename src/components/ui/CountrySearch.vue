@@ -1,9 +1,25 @@
 <template>
   <div class="search-container">
     <i class="fa fa-search search-icon"></i>
-    <input type="text" placeholder="Search for a country..." name="search" />
+    <input
+      v-model="search"
+      type="text"
+      placeholder="Search for a country..."
+      name="search"
+    />
+    {{ search }}
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      search: "",
+    };
+  },
+};
+</script>
 
 <style scoped>
 .search-container {
