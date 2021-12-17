@@ -1,5 +1,6 @@
 <template>
   <div class="grid">
+    {{ $store.state.item }}
     <div v-for="(country, index) in list" :key="index">
       <div class="card">
         <img :src="country.flag" alt="Avatar" style="width: 100%" />

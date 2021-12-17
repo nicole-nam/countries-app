@@ -2,22 +2,20 @@
   <div class="search-container">
     <i class="fa fa-search search-icon"></i>
     <input
-      v-model="search"
+      v-model="$store.state.item"
       type="text"
       placeholder="Search for a country..."
       name="search"
     />
-    {{ search }}
   </div>
 </template>
 
 <script>
 export default {
   data() {
-    return {
-      search: "",
-    };
+    return {};
   },
+  methods: {},
 };
 </script>
 
