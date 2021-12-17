@@ -2,11 +2,16 @@
   <div class="grid">
     <div v-for="(country, index) in list" :key="index">
       <div class="card">
-        <img :src="country.flags.svg" alt="Avatar" style="width: 100%" />
+        <img :src="country.flag" alt="Avatar" style="width: 100%" />
         <div class="container">
           <h4>
-            <b> {{ country.name.common }}</b>
+            <b> {{ country.name }}</b>
           </h4>
+          <ul>
+            <li>{{ country.population }}</li>
+            <li>{{ country.region }}</li>
+            <li v-if="country.capital">{{ country.capital[0] }}</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -24,8 +29,6 @@ export default {
   },
   methods: {
     sortArray(res) {
-      console.log("res", res[0].capital[0]);
-
       let country = [];
 
       for (var i = 0; i < res.length; i++) {
@@ -34,10 +37,12 @@ export default {
           population: res[i].population,
           region: res[i].region,
           capital: res[i].capital,
+          flag: res[i].flags.svg,
         };
         country.push(item);
       }
       country.sort((a, b) => (a.name > b.name ? 1 : -1));
+      this.list = country;
       console.log("country", country);
     },
   },
