@@ -24,11 +24,21 @@ export default {
   },
   methods: {
     sortArray(res) {
+      console.log("res", res[0].capital[0]);
+
       let country = [];
+
       for (var i = 0; i < res.length; i++) {
-        country.push(res[i].name.common);
+        var item = {
+          name: res[i].name.common,
+          population: res[i].population,
+          region: res[i].region,
+          capital: res[i].capital,
+        };
+        country.push(item);
       }
-      console.log("country name:", country.sort());
+      country.sort((a, b) => (a.name > b.name ? 1 : -1));
+      console.log("country", country);
     },
   },
   mounted() {
