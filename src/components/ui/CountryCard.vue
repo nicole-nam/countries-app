@@ -22,10 +22,19 @@ export default {
       list: null,
     };
   },
+  methods: {
+    sortArray(res) {
+      let country = [];
+      for (var i = 0; i < res.length; i++) {
+        country.push(res[i].name.common);
+      }
+      console.log("country name:", country.sort());
+    },
+  },
   mounted() {
     axios
       .get("https://restcountries.com/v3.1/all")
-      .then((response) => (this.list = response.data));
+      .then((response) => this.sortArray(response.data));
   },
 };
 </script>
