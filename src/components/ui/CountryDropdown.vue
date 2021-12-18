@@ -8,6 +8,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   data() {
     return {
@@ -20,6 +22,17 @@ export default {
         { text: "Oceania", value: "oceania" },
       ],
     };
+  },
+  watch: {
+    selected(val) {
+      if (val) {
+        axios
+          .get(`https://restcountries.com/v3.1/region/${val}`)
+          .then((response) => (this.$store.state.item = response.data));
+      } else {
+        this.$store.state.item = null;
+      }
+    },
   },
 };
 </script>
