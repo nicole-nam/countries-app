@@ -6,12 +6,19 @@
         <img :src="country.flags.svg" alt="Avatar" style="width: 100%" />
         <div class="container">
           <h4>
-            <b> {{ country.name }}</b>
+            <b> {{ country.name.common }}</b>
           </h4>
           <ul>
-            <li>{{ country.population }}</li>
-            <li>{{ country.region }}</li>
-            <li v-if="country.capital">{{ country.capital[0] }}</li>
+            <li>
+              Population:
+              {{
+                country.population
+                  .toString()
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+              }}
+            </li>
+            <li>Region: {{ country.region }}</li>
+            <li v-if="country.capital">Capital: {{ country.capital[0] }}</li>
           </ul>
         </div>
       </div>
@@ -28,9 +35,9 @@
             <b> {{ country.name }}</b>
           </h4>
           <ul>
-            <li>{{ country.population }}</li>
-            <li>{{ country.region }}</li>
-            <li v-if="country.capital">{{ country.capital[0] }}</li>
+            <li>Population: {{ country.population }}</li>
+            <li>Region: {{ country.region }}</li>
+            <li v-if="country.capital">Capital: {{ country.capital[0] }}</li>
           </ul>
         </div>
       </div>
@@ -98,5 +105,9 @@ img {
   width: 800px;
   height: 150px;
   object-fit: cover;
+}
+
+ul {
+  list-style-type: none;
 }
 </style>
