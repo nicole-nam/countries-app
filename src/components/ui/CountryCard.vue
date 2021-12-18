@@ -54,7 +54,9 @@ export default {
       for (var i = 0; i < res.length; i++) {
         var item = {
           name: res[i].name.common,
-          population: res[i].population,
+          population: res[i].population
+            .toString()
+            .replace(/\B(?=(\d{3})+(?!\d))/g, ","),
           region: res[i].region,
           capital: res[i].capital,
           flag: res[i].flags.svg,
@@ -79,6 +81,7 @@ export default {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 50px;
+  margin-top: 50px;
 }
 
 .card {
@@ -89,5 +92,11 @@ export default {
 
 .container {
   padding: 2px 16px;
+}
+
+img {
+  width: 800px;
+  height: 150px;
+  object-fit: cover;
 }
 </style>
