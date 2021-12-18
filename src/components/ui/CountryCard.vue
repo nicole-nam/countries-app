@@ -19,6 +19,7 @@
             </li>
             <li>Region: {{ country.region }}</li>
             <li v-if="country.capital">Capital: {{ country.capital[0] }}</li>
+            <li v-else>There is no capital.</li>
           </ul>
         </div>
       </div>
@@ -38,6 +39,7 @@
             <li>Population: {{ country.population }}</li>
             <li>Region: {{ country.region }}</li>
             <li v-if="country.capital">Capital: {{ country.capital[0] }}</li>
+            <li v-else>There is no capital.</li>
           </ul>
         </div>
       </div>
@@ -95,6 +97,7 @@ export default {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   width: 100%;
+  border-radius: 5px;
 }
 
 .container {
@@ -102,9 +105,11 @@ export default {
 }
 
 img {
-  width: 800px;
+  width: 900px;
   height: 150px;
   object-fit: cover;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 ul {
