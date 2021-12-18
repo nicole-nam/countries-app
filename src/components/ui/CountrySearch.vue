@@ -27,7 +27,7 @@ export default {
           .then((response) => (this.$store.state.item = response.data));
       } else {
         console.log("nothing");
-        this.$store.state.item = "";
+        this.$store.state.item = null;
       }
     },
   },

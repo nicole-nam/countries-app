@@ -1,10 +1,26 @@
 <template>
-  <div class="grid">
-    <div v-if="$store.state.item">
-      {{ $store.state.item[1].name }}
-      
+  <div v-if="$store.state.item" class="grid">
+    <!-- when there is search input  -->
+    <div v-for="(country, index) in $store.state.item" :key="index">
+      <div class="card">
+        <img :src="country.flags.svg" alt="Avatar" style="width: 100%" />
+        <div class="container">
+          <h4>
+            <b> {{ country.name }}</b>
+          </h4>
+          <ul>
+            <li>{{ country.population }}</li>
+            <li>{{ country.region }}</li>
+            <li v-if="country.capital">{{ country.capital[0] }}</li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div v-else v-for="(country, index) in list" :key="index">
+  </div>
+
+  <!-- default view -->
+  <div v-else class="grid">
+    <div v-for="(country, index) in list" :key="index">
       <div class="card">
         <img :src="country.flag" alt="Avatar" style="width: 100%" />
         <div class="container">
