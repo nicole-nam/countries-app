@@ -21,9 +21,14 @@ export default {
   },
   watch: {
     item(val) {
-      axios
-        .get(`https://restcountries.com/v3.1/name/${val}`)
-        .then((response) => (this.$store.state.item = response.data));
+      if (val) {
+        axios
+          .get(`https://restcountries.com/v3.1/name/${val}`)
+          .then((response) => (this.$store.state.item = response.data));
+      } else {
+        console.log("nothing");
+        this.$store.state.item = "";
+      }
     },
   },
 };
