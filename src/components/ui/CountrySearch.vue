@@ -2,7 +2,7 @@
   <div class="search-container">
     <i class="fa fa-search search-icon"></i>
     <input
-      v-model="$store.state.item"
+      v-model="item"
       type="text"
       placeholder="Search for a country..."
       name="search"
@@ -11,11 +11,21 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   data() {
-    return {};
+    return {
+      item: "",
+    };
   },
-  methods: {},
+  watch: {
+    item(val) {
+      axios
+        .get(`https://restcountries.com/v3.1/name/${val}`)
+        .then((response) => (this.$store.state.item = response.data));
+    },
+  },
 };
 </script>
 

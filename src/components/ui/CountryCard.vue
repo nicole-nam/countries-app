@@ -1,7 +1,10 @@
 <template>
   <div class="grid">
-    {{ $store.state.item }}
-    <div v-for="(country, index) in list" :key="index">
+    <div v-if="$store.state.item">
+      {{ $store.state.item[1].name }}
+      
+    </div>
+    <div v-else v-for="(country, index) in list" :key="index">
       <div class="card">
         <img :src="country.flag" alt="Avatar" style="width: 100%" />
         <div class="container">
